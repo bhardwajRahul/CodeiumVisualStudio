@@ -135,7 +135,7 @@ internal class InlineDiffAdornment : TextViewExtension<IWpfTextView, InlineDiffA
         Assumes.True(MefProvider.Instance.TextDocumentFactoryService.TryGetTextDocument(
                          _hostView.TextDataModel.DocumentBuffer, out var textDocument),
                      "InlineDiffAdornment.CreateDiff: Could not get text document for the " +
-                     "current host view");
+                         "current host view");
 
         // create a temporary file to store the diff
         string rightFileName = Path.GetTempFileName() + Path.GetExtension(textDocument.FilePath);
@@ -337,7 +337,7 @@ internal class InlineDiffAdornment : TextViewExtension<IWpfTextView, InlineDiffA
 
         Assumes.True(ErrorHandler.Succeeded(openingResult),
                      "InlineDiffAdornment.CreateRightProjectionBuffer: Could not open the " +
-                     "document for temporary file");
+                         "document for temporary file");
 
         VsShellUtilities.GetTextView(_rightWindowFrame).GetBuffer(out var sourceTextLines);
         Assumes.True(
@@ -354,7 +354,7 @@ internal class InlineDiffAdornment : TextViewExtension<IWpfTextView, InlineDiffA
         Assumes.True(MefProvider.Instance.TextDocumentFactoryService.TryGetTextDocument(
                          _rightSourceBuffer, out _rightTextDocument),
                      "InlineDiffAdornment.CreateRightProjectionBuffer: Could not get text " +
-                     "document for the temp file");
+                         "document for the temp file");
 
         // apply the diff
         using ITextEdit textEdit = _rightSourceBuffer.CreateEdit();

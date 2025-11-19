@@ -166,7 +166,7 @@ public class LanguageServer
                 // show an error message box
                 var msgboxResult = await VS.MessageBox.ShowAsync(
                     "Windsurf: Failed to get the Authentication Token. Please check the output " +
-                    "window for more details.",
+                        "window for more details.",
                     "Do you want to retry?",
                     OLEMSGICON.OLEMSGICON_WARNING,
                     OLEMSGBUTTON.OLEMSGBUTTON_RETRYCANCEL,
@@ -222,8 +222,8 @@ public class LanguageServer
             {
                 string portalUrl = _package.SettingsPage.PortalUrl.TrimEnd('/');
                 extensionBaseUrl = portalUrl;
-                string version = await new HttpClient().GetStringAsync(portalUrl + ("/api/" +
-                                                                                    "version"));
+                string version =
+                    await new HttpClient().GetStringAsync(portalUrl + ("/api/" + "version"));
                 if (version.Equals("test", StringComparison.OrdinalIgnoreCase) ||
                     Regex.IsMatch(version, @"^\d+\.\d+\.\d+$"))
                 {
@@ -306,7 +306,7 @@ public class LanguageServer
             ];
 
             errorBar.Show("[Windsurf] Critical Error: Failed to download the language server. Do " +
-                          "you want to retry?",
+                              "you want to retry?",
                           KnownMonikers.StatusError,
                           true,
                           null,
@@ -490,7 +490,7 @@ public class LanguageServer
 
         await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
         errorBar.Show("[Windsurf] Failed to verify the language server digital signature. The " +
-                      "executable might be corrupted.",
+                          "executable might be corrupted.",
                       KnownMonikers.IntellisenseWarning,
                       true,
                       null,
@@ -528,7 +528,7 @@ public class LanguageServer
 
             new NotificationInfoBar().Show(
                 "[Windsurf] Critical error: Failed to create language server directories. Please " +
-                "check the output window for more details.",
+                    "check the output window for more details.",
                 KnownMonikers.StatusError,
                 true,
                 null,
@@ -596,7 +596,7 @@ public class LanguageServer
 
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
             errorBar.Show("[Windsurf] Critical Error: Failed to start the language server. Do " +
-                          "you want to retry?",
+                              "you want to retry?",
                           KnownMonikers.StatusError,
                           true,
                           null,
@@ -618,7 +618,7 @@ public class LanguageServer
             // warn the user about the issue
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
             new NotificationInfoBar().Show("[Windsurf] Failed to read output from the language " +
-                                           "server, Windsurf might not work properly.",
+                                               "server, Windsurf might not work properly.",
                                            KnownMonikers.IntellisenseWarning,
                                            true,
                                            null,
@@ -653,7 +653,7 @@ public class LanguageServer
             {
                 new NotificationInfoBar().Show(
                     "[Windsurf] Critical Error: Failed to get the language server port. Please " +
-                    "check the output window for more details.",
+                        "check the output window for more details.",
                     KnownMonikers.StatusError,
                     true,
                     null,

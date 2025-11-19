@@ -78,7 +78,7 @@ public sealed class CodeiumVSPackage : ToolkitPackage
                 $"CodeiumVSPackage.InitializeAsync: Failed to register commands; Exception {ex}");
             await VS.MessageBox.ShowErrorAsync("Windsurf: Failed to register commands.",
                                                "Windsurf might not work correctly. Please check " +
-                                               "the output window for more details.");
+                                                   "the output window for more details.");
         }
 
         try
